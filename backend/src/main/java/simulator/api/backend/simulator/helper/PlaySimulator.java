@@ -1,11 +1,6 @@
-package simulator.api.backend.simulator.model;
+package simulator.api.backend.simulator.helper;
 
-import lombok.Getter;
-import lombok.Setter;
-
-@Getter
-@Setter
-public class Play {
+public class PlaySimulator {
 
     /*
     TODO:
