@@ -1,5 +1,8 @@
 package simulator.api.backend.simulator.helper;
 
+import simulator.api.backend.simulator.model.GameState;
+import simulator.api.backend.simulator.model.PlayCall;
+
 public class PlaySimulator {
 
     /*
@@ -19,5 +22,12 @@ public class PlaySimulator {
                 - tackles have a high % chance of being from the covering DB
             - if ran, RB & OL/DL ratings determine outcome
                 - tackles depend on the defense ratings on who gets credit
+
+
+         - after play is over, update the stats, down, score, etc.
+         - update clock
      */
+    public void simulate(GameState gameState, PlayCall playCall){
+
+    }
 }

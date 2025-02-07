@@ -7,7 +7,9 @@ import lombok.Setter;
 @Setter
 public class GameState {
     private TeamState homeTeam;
+    private int homeTeamPoints;
     private TeamState awayTeam;
+    private int awayTeamPoints;
     private boolean homeTeamPossession;
     private int fieldPosition;
     private int down;

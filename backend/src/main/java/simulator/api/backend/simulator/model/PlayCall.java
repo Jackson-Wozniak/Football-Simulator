@@ -7,6 +7,7 @@ import lombok.Setter;
 @Setter
 public class PlayCall {
     private boolean isPass;
+    private boolean isBlitz;
     private Personnel offensivePersonnel;
     private Personnel defensivePersonnel;
 }
