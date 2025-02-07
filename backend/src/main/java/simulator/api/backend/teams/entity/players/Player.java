@@ -1,4 +1,4 @@
-package simulator.api.backend.teams.entity;
+package simulator.api.backend.teams.entity.players;
 
 import lombok.Getter;
 import lombok.Setter;
