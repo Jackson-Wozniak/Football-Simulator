@@ -12,4 +12,9 @@ import java.util.List;
 public class DepthChart {
 
     private final List<Player> quarterbacks = new ArrayList<>();
+    private final List<Player> runningBacks = new ArrayList<>();
+    private final List<Player> receivers = new ArrayList<>();
+    private final List<Player> tightEnds = new ArrayList<>();
+    private final List<Player> offensiveLine = new ArrayList<>();
+
 }
