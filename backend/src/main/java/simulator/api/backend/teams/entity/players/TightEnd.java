@@ -23,4 +23,8 @@ public class TightEnd extends Player{
     public static TightEnd tightEnd(String name, int catching, int iq, int block, int physical){
         return new TightEnd(name, catching, iq, block, physical);
     }
+
+    public int getReceiving(){
+        return (catching + iq + physicality) / 3;
+    }
 }

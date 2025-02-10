@@ -14,4 +14,11 @@ public abstract class Player {
         this.name = name;
         this.position = position;
     }
+
+    @Override
+    public boolean equals(Object obj){
+        if(obj == null) return false;
+        if(!(obj instanceof Player)) return false;
+        return ((Player) obj).getName().equals(this.getName());
+    }
 }

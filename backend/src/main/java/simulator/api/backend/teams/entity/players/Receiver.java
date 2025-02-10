@@ -23,4 +23,8 @@ public class Receiver extends Player{
     public static Receiver receiver(String name, int catching, int iq, int elusive, int physical){
         return new Receiver(name, catching, iq, elusive, physical);
     }
+
+    public int getReceiving(){
+        return (catching + iq + elusiveness + physicality) / 4;
+    }
 }
