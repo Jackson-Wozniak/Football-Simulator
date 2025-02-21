@@ -1,8 +1,10 @@
 package simulator.api.backend.simulator.helper;
 
+import org.springframework.stereotype.Component;
 import simulator.api.backend.simulator.model.GameState;
 import simulator.api.backend.simulator.model.PlayCall;
 
+@Component
 public class PlaySimulator {
 
     /*
