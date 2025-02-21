@@ -1,5 +1,9 @@
 package simulator.api.backend.teams.entity;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Embeddable;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import lombok.Getter;
 import lombok.Setter;
 import simulator.api.backend.simulator.enums.PersonnelType;
@@ -13,42 +17,51 @@ import simulator.api.backend.teams.enums.PassingStyle;
 import java.util.HashMap;
 import java.util.Map;
 
+@Embeddable
 @Getter
 @Setter
 public class TeamTendencies {
+    @Column(name = "pass_rate_prob")
     private double passRate;
+    @Enumerated(EnumType.STRING)
     private Aggressiveness aggressiveness;
+    @Enumerated(EnumType.STRING)
     private PassingStyle passingStyle;
-    private Map<PersonnelType, Double> offensivePersonnelRate = new HashMap<>();
-    private Map<PersonnelType, Double> defensivePersonnelRate = new HashMap<>();
-    private Map<Player, Double> receiverTargetProbabilities = new HashMap<>();
 
-    public void setTargetProbabilities(DepthChart depthChart){
+    public Map<PersonnelType, Double> defensivePersonnelRate(){
+        return null;
+    }
+
+    public Map<PersonnelType, Double> offensivePersonnelRate(){
+        return null;
+    }
+
+    public Map<Player, Double> receiverTargetProbabilities(DepthChart depthChart){
+        Map<Player, Double> targetProbabilities = new HashMap<>();
+
         Map<Player, Integer> playerStats = new HashMap<>();
         int totalStats = 0;
-        int receivers = 0;
         for(Player player : depthChart.getReceivers()){
             Receiver receiver = (Receiver) player;
             totalStats += receiver.getReceiving();
-            receivers++;
             playerStats.put(receiver, receiver.getReceiving());
         }
         for(Player player : depthChart.getTightEnds()){
             TightEnd receiver = (TightEnd) player;
             totalStats += receiver.getReceiving();
-            receivers++;
             playerStats.put(receiver, receiver.getReceiving());
         }
         for(Player player : depthChart.getRunningBacks()){
             Runningback receiver = (Runningback) player;
             totalStats += receiver.getReceiving();
-            receivers++;
             playerStats.put(receiver, receiver.getReceiving());
         }
+
         int finalTotalStats = totalStats;
         playerStats.forEach((player, avg) -> {
             double percent = ((double) avg / finalTotalStats) * 100;
-            receiverTargetProbabilities.put(player, percent);
+            targetProbabilities.put(player, percent);
         });
+        return targetProbabilities;
     }
 }

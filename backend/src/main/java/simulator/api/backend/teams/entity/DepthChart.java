@@ -17,4 +17,7 @@ public class DepthChart {
     private final List<Player> tightEnds = new ArrayList<>();
     private final List<Player> offensiveLine = new ArrayList<>();
 
+    public DepthChart(List<Player> players){
+        //TODO: must add each position, ordered based on their position
+    }
 }
