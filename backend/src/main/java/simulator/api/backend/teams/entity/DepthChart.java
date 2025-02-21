@@ -10,8 +10,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Getter
-@Setter
 public class DepthChart {
 
     private Map<Position, ArrayList<Player>> players = new HashMap<>();
@@ -31,5 +29,25 @@ public class DepthChart {
         this.players.forEach((position, playerList) -> {
             playerList.sort(Player.compareDepthChart());
         });
+    }
+
+    public List<Player> quarterbacks(){
+        return this.players.get(Position.QUARTER_BACK);
+    }
+
+    public List<Player> runningBacks(){
+        return this.players.get(Position.RUNNING_BACK);
+    }
+
+    public List<Player> receivers(){
+        return this.players.get(Position.RECEIVER);
+    }
+
+    public List<Player> tightEnds(){
+        return this.players.get(Position.TIGHT_END);
+    }
+
+    public List<Player> offensiveLine(){
+        return this.players.get(Position.OFFENSIVE_LINE);
     }
 }
