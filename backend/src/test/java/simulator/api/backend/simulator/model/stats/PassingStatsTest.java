@@ -10,7 +10,7 @@ class PassingStatsTest {
 
     @Test
     void testCompletionPercent(){
-        Player testQB = Quarterback.quarterback("Test", 100, 100, 100, 100);
+        Player testQB = Quarterback.quarterback("Test", null, 100, 100, 100, 100);
         PassingStats stats = new PassingStats(testQB);
 
         stats.attempt(true, 10);
@@ -25,7 +25,7 @@ class PassingStatsTest {
 
     @Test
     void testYardsPerAttempt(){
-        Player testQB = Quarterback.quarterback("Test", 100, 100, 100, 100);
+        Player testQB = Quarterback.quarterback("Test", null, 100, 100, 100, 100);
         PassingStats stats = new PassingStats(testQB);
 
         stats.attempt(true, 10);
@@ -40,7 +40,7 @@ class PassingStatsTest {
 
     @Test
     void testPasserRating(){
-        Player testQB = Quarterback.quarterback("Test", 100, 100, 100, 100);
+        Player testQB = Quarterback.quarterback("Test", null,100, 100, 100, 100);
         PassingStats stats = new PassingStats(testQB);
 
         stats.attempt(true, 10);

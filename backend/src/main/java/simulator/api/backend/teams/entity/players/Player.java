@@ -49,6 +49,6 @@ public abstract class Player {
     //used to sort players by their depth chart position
     //Accurate when comparing players at the same position
     public static Comparator<Player> compareDepthChart(){
-        return Comparator.comparing(Player::totalStats);
+        return Comparator.comparing(Player::totalStats).reversed();
     }
 }

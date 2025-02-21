@@ -41,17 +41,17 @@ public class TeamTendencies {
 
         Map<Player, Integer> playerStats = new HashMap<>();
         int totalStats = 0;
-        for(Player player : depthChart.getReceivers()){
+        for(Player player : depthChart.receivers()){
             Receiver receiver = (Receiver) player;
             totalStats += receiver.getReceiving();
             playerStats.put(receiver, receiver.getReceiving());
         }
-        for(Player player : depthChart.getTightEnds()){
+        for(Player player : depthChart.tightEnds()){
             TightEnd receiver = (TightEnd) player;
             totalStats += receiver.getReceiving();
             playerStats.put(receiver, receiver.getReceiving());
         }
-        for(Player player : depthChart.getRunningBacks()){
+        for(Player player : depthChart.runningBacks()){
             Runningback receiver = (Runningback) player;
             totalStats += receiver.getReceiving();
             playerStats.put(receiver, receiver.getReceiving());

@@ -1,7 +1,5 @@
 package simulator.api.backend.teams.entity;
 
-import lombok.Getter;
-import lombok.Setter;
 import simulator.api.backend.teams.entity.players.Player;
 import simulator.api.backend.teams.enums.Position;
 
@@ -12,7 +10,7 @@ import java.util.Map;
 
 public class DepthChart {
 
-    private Map<Position, ArrayList<Player>> players = new HashMap<>();
+    private final Map<Position, ArrayList<Player>> players = new HashMap<>();
 
     public DepthChart(List<Player> players){
         players.forEach(player -> {
@@ -26,9 +24,7 @@ public class DepthChart {
         now that players are added, we want to sort them once for each position group
         as opposed to doing it multiple times in the loop above
          */
-        this.players.forEach((position, playerList) -> {
-            playerList.sort(Player.compareDepthChart());
-        });
+        this.players.forEach((position, playerList) -> playerList.sort(Player.compareDepthChart()));
     }
 
     public List<Player> quarterbacks(){
