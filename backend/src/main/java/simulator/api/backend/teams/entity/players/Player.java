@@ -7,6 +7,8 @@ import lombok.Setter;
 import simulator.api.backend.teams.entity.Team;
 import simulator.api.backend.teams.enums.Position;
 
+import java.util.Comparator;
+
 @Entity(name = "player")
 @Inheritance(strategy = InheritanceType.JOINED)
 @Getter
@@ -42,4 +44,11 @@ public abstract class Player {
     }
 
     protected abstract int totalStats();
+
+
+    //used to sort players by their depth chart position
+    //Accurate when comparing players at the same position
+    public static Comparator<Player> compareDepthChart(){
+        return Comparator.comparing(Player::totalStats);
+    }
 }
