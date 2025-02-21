@@ -5,5 +5,10 @@ public enum Position {
     RUNNING_BACK,
     RECEIVER,
     TIGHT_END,
-    OFFENSIVE_LINE
+    OFFENSIVE_LINE;
+
+    /*
+    TODO: Implement the following to query for positions in SQL
+    public abstract String joinedTableName();
+     */
 }
